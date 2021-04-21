@@ -27,7 +27,7 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY) // 넘버링 전략 -> 해당 프로젝트에서 연결된 DB의 넘버링 전략을 따라간다.
     private int id; //sequence, auto_increment
 
-    @Column(nullable = false, length = 100)
+    @Column(nullable = false, length = 100, unique = true)
     private String email; //아이디로 이메일을 써야징 !!
 
     @Column(nullable = false, length = 100) //해쉬화 하면 길이가 길어진다!! 그러므로 좀 넉넉히
@@ -36,7 +36,7 @@ public class User {
     @Column(nullable = false, length = 50) //유저이름
     private String username;
 
-    @Column(nullable = false, length = 50) // 중복가입 차단, 본인인증, sms 광고 메시지
+    @Column(nullable = false, length = 50, unique = true) // 중복가입 차단, 본인인증, sms 광고 메시지
     private String telephone;
 
     @Column(nullable = false, length = 50) // 생일 이벤트, 연령제한상품, 인증
