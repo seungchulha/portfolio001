@@ -1,11 +1,21 @@
 package com.example.portfolio001.model;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.hibernate.annotations.ColumnDefault;
 import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
+import java.util.List;
 
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 @Entity
 public class Board {
 
@@ -25,6 +35,9 @@ public class Board {
     @ManyToOne // @ManyToOne -> Board는 many , user는 one 이라는 의미 --> 한명의 유저가 여러 게시글을 쓸수 있으나, 게시글의 유저는 한명이다 라는 의미
     @JoinColumn(name="userid") // @JoinColumn ->
     private User user; // 데이터베이스는 오브젝트를 저장할수 없다. FK, 자바는 오브젝트를 저장할수 있다.
+
+    @OneToMany(mappedBy = "board", fetch = FetchType.EAGER)
+    private List<Reply> reply;
 
     @CreationTimestamp
     private Timestamp createDate;
