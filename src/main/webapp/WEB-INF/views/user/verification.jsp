@@ -3,7 +3,7 @@
 <%@include file="../layout/header.jsp"%>
 <div class="container">
 
-    <img src="" alt="">
+    <img src="/images/caution.png" alt="">
     <h1>회원 가입을 위한 본인 인증 절차가 필요합니다.</h1>
 
 </div>

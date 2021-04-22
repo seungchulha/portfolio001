@@ -71,6 +71,18 @@ public class User {
     @Column(nullable = true, length = 100)
     private String recommender;
 
+    @Column(nullable = false, length = 20)
+    private String userZipcode;
+
+    @Column(nullable = false, length = 200)
+    private String userAddress;
+
+    @Column(nullable = false, length = 200)
+    private String userAddressDetail;
+
+    @Column(nullable = false, length = 200)
+    private String userAddressRefer;
+
     @CreationTimestamp //시간이 자동으로 입력됩니다. 가입날짜.
     private Timestamp createDate;
 }

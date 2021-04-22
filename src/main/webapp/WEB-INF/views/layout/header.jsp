@@ -30,6 +30,8 @@
         <form class="form-inline my-2 my-lg-0">
             <input class="form-control mr-sm-2" type="text" placeholder="Search">
             <button class="btn btn-success my-2 my-sm-0" type="button">Search</button>
+            <a href="/moment4u/customer/signin"><i class="fas fa-user"></i></a>
+            <a href=""><i class="fas fa-shopping-bag"></i></a>
         </form>
     </div>
 </nav>
