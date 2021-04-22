@@ -13,9 +13,10 @@ import org.hibernate.annotations.DynamicInsert;
 import javax.persistence.*;
 import java.sql.Timestamp;
 
-@DynamicInsert //insert 시에 null 이 되어버리는 경우 (default 가 이미 지정되있는경우)  필드를 제외시켜버린다.
+
 
 // ORM -> Java (다른언어) Object -> 테이블로 맵핑해주는 기술
+@DynamicInsert //insert 시에 null 이 되어버리는 경우 (default 가 이미 지정되있는경우)  필드를 제외시켜버린다.
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -66,6 +67,9 @@ public class User {
     //@ColumnDefault("'Bronze'") //문자임을 알려주기위해 쌍따옴표 안에 홑따옴표 넣어주세요 // 유저 등급 ( 50000 단위로 계급 증가, 시작은 bronze -> silver -> gold -> platinum -> diamond)
     @Enumerated(EnumType.STRING)
     private RankType rank;
+
+    @Column(nullable = true, length = 100)
+    private String recommender;
 
     @CreationTimestamp //시간이 자동으로 입력됩니다. 가입날짜.
     private Timestamp createDate;

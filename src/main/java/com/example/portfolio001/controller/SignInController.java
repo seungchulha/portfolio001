@@ -10,4 +10,9 @@ public class SignInController {
     public String signinPage(){
         return "user/signinPage";
     }
+
+    @GetMapping("/customer/createAccount")
+    public String createAccount(){
+        return "user/createAccount";
+    }
 }
